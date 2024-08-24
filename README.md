@@ -6,3 +6,6 @@ By creating a symbolic link from your actual configuration files (which could be
 ```
 ln -s path/to/your/.dotfiles/nvim .config/nvim
 ```
+
+
+The nvim folder is meant to have a symlink in the .config file in the Linux home
