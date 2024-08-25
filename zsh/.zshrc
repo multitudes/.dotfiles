@@ -12,7 +12,7 @@ alias norm='norminette -R CheckForbiddenSourceHeader'
 alias c='cc -Wall -Wextra -Werror'
 
 # Valgtind all flags
-alias valf='valgrind --leak-check=full --track-origins=yes  --show-leak-kinds=all' --track-fds=yes
+alias valf='valgrind --leak-check=full --track-origins=yes  --show-leak-kinds=all --track-fds=yes'
 # used for philosophers
 alias hel='valgrind --tool=helgrind -s'
 alias heldrd='valgrind --tool=drd'
@@ -37,4 +37,5 @@ fi
 
 if [[ "$OSTYPE" == "darwin" ]]; then
     # Code specific to macOS
+	echo "macOS"
 fi

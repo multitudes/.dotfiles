@@ -12,7 +12,7 @@ alias norm='norminette -R CheckForbiddenSourceHeader'
 alias c='cc -Wall -Wextra -Werror'
 
 # Valgtind all flags
-alias valf='valgrind --leak-check=full --track-origins=yes  --show-leak-kinds=all' --track-fds=yes
+alias valf='valgrind --leak-check=full --track-origins=yes  --show-leak-kinds=all --track-fds=yes'
 # used for philosophers
 alias hel='valgrind --tool=helgrind -s'
 alias heldrd='valgrind --tool=drd'
@@ -32,9 +32,9 @@ export PATH=/sgoinfre/goinfre/Perso/lbrusa/swift-5.10.1-RELEASE-ubuntu22.04/usr/
 
 # junest allows to install packages without sudo on 42 computers
 export PATH=~/.local/share/junest/bin:/home/lbrusa/.local/share/junest/bin:/sgoinfre/goinfre/Perso/lbrusa/swift-5.10.1-RELEASE-ubuntu22.04/usr/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/.local/bin:/home/lbrusa/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-
 fi
 
 if [[ "$OSTYPE" == "darwin" ]]; then
     # Code specific to macOS
+	echo "macOS"
 fi
