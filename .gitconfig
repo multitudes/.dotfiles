@@ -1,0 +1,36 @@
+[user]
+	name = Laurent Brusa
+	email = wrmultitudes@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+	pr = pull --rebase
+[core]
+	autocrlf = input
+    editor = code --wait
+    excludesfile = ~/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/laurentb/.stCommitMsg
+[color]
+	ui = true
+[init]
+	defaultBranch = main
+[http]
+	postBuffer = 157286400
+[pull]
+	rebase = true
+	default = current
+[fetch]
+	prune = true
+[push]
+	default = current
