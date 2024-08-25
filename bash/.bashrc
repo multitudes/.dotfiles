@@ -38,3 +38,10 @@ if [[ "$OSTYPE" == "darwin" ]]; then
     # Code specific to macOS
 	echo "macOS"
 fi
+
+# common to both linux and macOS
+# ignore duplicates in history when consecutively typed
+HISTCONTROL=ignoredups
+
+# vim style command line editing
+set -o vi
