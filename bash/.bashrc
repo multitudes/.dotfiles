@@ -18,7 +18,9 @@ alias hel='valgrind --tool=helgrind -s'
 alias heldrd='valgrind --tool=drd'
 
 # remove all containers
-alias dclean='docker rm -v $(docker ps -aq -f status=exited)'
+
+# remove all containers
+alias dclean='containers=$(docker ps -aq -f status=exited); [ -n "$containers" ] && docker rm -v $containers'
 
 # use neovim instead of vim
 alias vim='nvim'
