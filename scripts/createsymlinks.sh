@@ -1,4 +1,5 @@
 #!/bin/bash
+# for 42 berlin computers
 # This script creates symlinks to the .docker folder on goinfre
 # because the goinfre storage is deleted regularly
 # and the .docker folder is too big to be stored in the home directory
