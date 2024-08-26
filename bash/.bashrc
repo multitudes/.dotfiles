@@ -47,3 +47,10 @@ HISTCONTROL=ignoredups
 
 # vim style command line editing
 set -o vi
+
+#alias to edit zshrc and bashrc
+alias rceditz='$EDITOR $HOME/.zshrc'
+alias rcedit='$EDITOR $HOME/.bashrc'
+
+# CDPATH is like PATH but for directories
+export CDPATH=$HOME:$HOME/Developer:$HOME/Music:$HOME/:$HOME/Music:..
