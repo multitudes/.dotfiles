@@ -38,6 +38,8 @@ fi
 if [[ "$OSTYPE" == "darwin" ]]; then
     # Code specific to macOS
 	echo "macOS"
+	# Add Anaconda/Miniconda to PATH
+	export PATH="$HOME/miniconda3/bin:$PATH"
 fi
 
 
