@@ -23,11 +23,21 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	export PATH=~/.local/share/junest/bin:/home/lbrusa/.local/share/junest/bin:/sgoinfre/goinfre/Perso/lbrusa/swift-5.10.1-RELEASE-ubuntu22.04/usr/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/.local/bin:/home/lbrusa/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 fi
 
-if [[ "$OSTYPE" == "darwin" ]]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
     # Code specific to macOS
 	echo "macOS"
-	# Add Anaconda/Miniconda to PATH
-	export PATH="$HOME/miniconda3/bin:$PATH"
+	# Add Anaconda3 to PATH
+	export PATH="$HOME/anaconda3/bin:$PATH"
+
+	# Initialize conda
+	if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+		. "$HOME/anaconda3/etc/profile.d/conda.sh"
+	else
+		export PATH="$HOME/anaconda3/bin:$PATH"
+	fi
+	# for alacritty
+	ln -s /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
+	
 fi
 
 # common to both linux and macOS

@@ -56,29 +56,20 @@ TERM = "xterm-256color"
 [font]
 size = 12.0
 
-[font.bold]
-family = "Noto Mono"
-style = "Bold"
+# Primary font
+normal = { family = "Noto Mono", style = "Regular" }
+bold = { family = "Noto Mono", style = "Bold" }
+italic = { family = "Noto Mono", style = "Italic" }
+bold_italic = { family = "Noto Mono", style = "Bold Italic" }
 
-[font.bold_italic]
-family = "Noto Mono"
-style = "Bold Italic"
+# Fallback fonts
+fallback = ["SF Mono"]
 
-[font.glyph_offset]
-x = 0
-y = 0
+# Glyph offset
+glyph_offset = { x = 0, y = 0 }
 
-[font.italic]
-family = "Noto Mono"
-style = "Italic"
-
-[font.normal]
-family = "Noto Mono"
-style = "Regular"
-
-[font.offset]
-x = 0
-y = 0
+# Font offset
+offset = { x = 0, y = 0 }
 
 [[keyboard.bindings]]
 action = "Paste"
