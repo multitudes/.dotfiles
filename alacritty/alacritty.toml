@@ -65,7 +65,7 @@ family = "Noto Sans Mono"
 style = "Bold Italic"
 
 # Glyph offset
-glyph_offset = { x = 0, y = 0 }
+# glyph_offset = { x = 0, y = 0 }
 
 [font.italic]
 family = "Noto Sans Mono"
