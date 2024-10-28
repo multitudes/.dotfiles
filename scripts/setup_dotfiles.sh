@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the dotfiles directory
-DOTFILES_DIR="$HOME/Dev/.dotfiles"
+DOTFILES_DIR="$HOME/.dotfiles"
 
 # List of dotfiles to be linked
 declare -a DOTFILES=(
@@ -28,9 +28,9 @@ if [ -f "$HOME/.gitconfig" ]; then
 fi
 
 # Create a symlink to the dotfile
-ln -s "$DOTFILES_DIR/bash/.bashrc" "$HOME/.bashrc"
-ln -s "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
-ln -s "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
+ln -sf "$DOTFILES_DIR/bash/.bashrc" "$HOME/.bashrc"
+ln -sf "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
+ln -sf "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
 
 
 echo "Dotfiles have been linked."

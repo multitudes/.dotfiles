@@ -10,6 +10,15 @@ On the machines I use a symlink to the dotfiles in this repository.  For example
 ln -s ~/.dotfiles/bash/.bashrc ~/.bashrc 
 ```
 
+IMPORTANT: The script assumes you put the .dotfiles folder in your home directory. This is also for compatibility with different systems.
+
+## zsh
+
+## Bash
+
+## git
+
+
 ## Neovim
 Neovim, which uses Lua for configuration, looks for its configuration files in several places, one of which is the `~/.config/nvim/` directory.   
 By creating a symbolic link from your actual configuration files (which could be in your `.dotfiles` directory or elsewhere) to `~/.config/nvim/`, you're telling Neovim to treat the linked files as its configuration.  

@@ -1,9 +1,13 @@
 ### this is for berlin 42
+
+## this should create the symlinks for .gitconfig etc
+~/.scripts/createsymlinks.sh
+
 # Check if the operating system is Linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
 # I downloaded the update for VSCode but i need to run it from the downloaded folder
-alias code='/home/lbrusa/Downloads/usr/share/code/code'
+#alias code='/home/lbrusa/Downloads/usr/share/code/code'
 
 # This has beem used a lot at the beginning of my core curriculum at 42 Berlin
 alias norm='norminette -R CheckForbiddenSourceHeader'
@@ -53,3 +57,4 @@ alias rcedit='$EDITOR $HOME/.bashrc'
 
 # CDPATH is like PATH but for directories
 export CDPATH=$HOME:$HOME/Developer:$HOME/Music:$HOME/:$HOME/Music:..
+export PATH=$PATH:~/.local/bin

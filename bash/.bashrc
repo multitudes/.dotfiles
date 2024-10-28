@@ -3,7 +3,7 @@
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
 # I downloaded the update for VSCode but i need to run it from the downloaded folder
-alias code='/home/lbrusa/Downloads/usr/share/code/code'
+#alias code='/home/lbrusa/Downloads/usr/share/code/code'
 
 # This has beem used a lot at the beginning of my core curriculum at 42 Berlin
 alias norm='norminette -R CheckForbiddenSourceHeader'

@@ -28,7 +28,7 @@
 [http]
 	postBuffer = 157286400
 [pull]
-	rebase = true
+	rebase = false
 	default = current
 [fetch]
 	prune = true
