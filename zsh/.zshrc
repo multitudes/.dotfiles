@@ -39,9 +39,21 @@ export PATH=~/.local/share/junest/bin:/home/lbrusa/.local/share/junest/bin:/sgoi
 
 fi
 
-if [[ "$OSTYPE" == "darwin" ]]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
     # Code specific to macOS
 	echo "macOS"
+	# Add Anaconda3 to PATH
+	export PATH="$HOME/anaconda3/bin:$PATH"
+
+	# Initialize conda
+	if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+		. "$HOME/anaconda3/etc/profile.d/conda.sh"
+	else
+		export PATH="$HOME/anaconda3/bin:$PATH"
+	fi
+	# for alacritty
+	ln -s /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
+	
 fi
 
 
@@ -57,4 +69,3 @@ alias rcedit='$EDITOR $HOME/.bashrc'
 
 # CDPATH is like PATH but for directories
 export CDPATH=$HOME:$HOME/Developer:$HOME/Music:$HOME/:$HOME/Music:..
-export PATH=$PATH:~/.local/bin

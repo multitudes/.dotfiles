@@ -8,6 +8,7 @@ declare -a DOTFILES=(
     ".bashrc"
 	".zshrc"
     ".gitconfig"
+	".gitignore_global"
 
     # Add more dotfiles as needed
 )
@@ -25,6 +26,10 @@ fi
 if [ -f "$HOME/.gitconfig" ]; then
 	# Backup the existing dotfile
 	mv "$HOME/.gitconfig" "$HOME/.gitconfig.bak"
+fi
+if [ -f "$HOME/.gitignore_global" ]; then
+	# Backup the existing dotfile
+	mv "$HOME/.gitignore_global" "$HOME/.gitignore_global.bak"
 fi
 
 # Create a symlink to the dotfile

@@ -57,23 +57,22 @@ TERM = "xterm-256color"
 size = 12.0
 
 [font.bold]
-family = "Noto Mono"
+family = "Noto Sans Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Noto Mono"
+family = "Noto Sans Mono"
 style = "Bold Italic"
 
-[font.glyph_offset]
-x = 0
-y = 0
+# Glyph offset
+# glyph_offset = { x = 0, y = 0 }
 
 [font.italic]
-family = "Noto Mono"
+family = "Noto Sans Mono"
 style = "Italic"
 
 [font.normal]
-family = "Noto Mono"
+family = "Noto Sans Mono"
 style = "Regular"
 
 [font.offset]
