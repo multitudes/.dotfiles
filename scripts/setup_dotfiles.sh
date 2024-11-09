@@ -37,5 +37,4 @@ ln -sf "$DOTFILES_DIR/bash/.bashrc" "$HOME/.bashrc"
 ln -sf "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
 ln -sf "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
 
-
 echo "Dotfiles have been linked."

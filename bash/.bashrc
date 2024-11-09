@@ -53,8 +53,6 @@ alias rcedit='$EDITOR $HOME/.bashrc'
 
 # CDPATH is like PATH but for directories
 export CDPATH=$HOME:$HOME/Developer:$HOME/Music:$HOME/:$HOME/Music:..
-<<<<<<< HEAD
-=======
 
 # Docker aliases
 # remove all containers
@@ -63,4 +61,3 @@ alias dclean='containers=$(docker ps -aq -f status=exited); [ -n "$containers" ]
 # NVIM
 # use neovim instead of vim
 alias vim='nvim'
->>>>>>> 95923cdb53412f53db4c488295e41b4fed34b6f5

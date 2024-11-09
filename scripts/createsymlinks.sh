@@ -7,4 +7,7 @@
 rm -rf ~/.docker
 mkdir -p ~/goinfre/.docker
 ln -sf ~/goinfre/.docker ~/.docker
-ls -l ~/.docker
+
+# for my dotfiles
+ln -sf ~/.dotfiles/gdb/.gdbinit ~/.gdbinit
+# ls -l ~/.docker
