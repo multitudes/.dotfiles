@@ -51,6 +51,11 @@ set -o vi
 alias rceditz='$EDITOR $HOME/.zshrc'
 alias rcedit='$EDITOR $HOME/.bashrc'
 
+#go
+export GOROOT=/home/lbrusa/sgoinfre/go
+export GOPATH=/home/user/go/workspace
+export PATH=$PATH:$GOROOT/bin
+
 # CDPATH is like PATH but for directories
 export CDPATH=$HOME:$HOME/Developer:$HOME/Music:$HOME/:$HOME/Music:..
 
