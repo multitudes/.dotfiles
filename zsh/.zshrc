@@ -70,7 +70,7 @@ alias rcedit='$EDITOR $HOME/.bashrc'
 #go
 export GOROOT=/home/lbrusa/sgoinfre/go
 export PATH=$PATH:$GOROOT/bin
-export GOPATH=/home/user/go/workspace
+export GOPATH=/home/lbrusa/sgoinfre/go_workspace
 
 # CDPATH is like PATH but for directories
 export CDPATH=$HOME:$HOME/Developer:$HOME/Music:$HOME/:$HOME/Music:..
