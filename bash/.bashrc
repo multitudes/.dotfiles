@@ -11,7 +11,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	alias hel='valgrind --tool=helgrind -s'
 	alias heldrd='valgrind --tool=drd'
 
-
 	export PATH="$HOME/.local/bin:$PATH"
 	export PATH=$HOME/local/bin:$PATH
 
@@ -21,6 +20,11 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
 	# junest allows to install packages without sudo on 42 computers
 	export PATH=~/.local/share/junest/bin:/home/lbrusa/.local/share/junest/bin:/sgoinfre/goinfre/Perso/lbrusa/swift-5.10.1-RELEASE-ubuntu22.04/usr/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/.local/bin:/home/lbrusa/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+	
+	#go
+	export GOROOT=/home/lbrusa/sgoinfre/go
+	export GOPATH=/home/lbrusa/sgoinfre/go_workspace
+	export PATH=$PATH:$GOROOT/bin
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -51,10 +55,6 @@ set -o vi
 alias rceditz='$EDITOR $HOME/.zshrc'
 alias rcedit='$EDITOR $HOME/.bashrc'
 
-#go
-export GOROOT=/home/lbrusa/sgoinfre/go
-export GOPATH=/home/lbrusa/sgoinfre/go_workspace
-export PATH=$PATH:$GOROOT/bin
 
 # CDPATH is like PATH but for directories
 export CDPATH=$HOME:$HOME/Developer:$HOME/Music:$HOME/:$HOME/Music:..

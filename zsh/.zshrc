@@ -3,6 +3,8 @@
 ## this should create the symlinks for .gitconfig etc
 ~/.scripts/createsymlinks.sh
 
+
+############## this is for berlin 42
 # Check if the operating system is Linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
@@ -37,6 +39,11 @@ export PATH=/sgoinfre/goinfre/Perso/lbrusa/swift-5.10.1-RELEASE-ubuntu22.04/usr/
 # junest allows to install packages without sudo on 42 computers
 export PATH=~/.local/share/junest/bin:/home/lbrusa/.local/share/junest/bin:/sgoinfre/goinfre/Perso/lbrusa/swift-5.10.1-RELEASE-ubuntu22.04/usr/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/.local/bin:/home/lbrusa/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
+#go
+export GOROOT=/home/lbrusa/sgoinfre/go
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=/home/lbrusa/sgoinfre/go_workspace
+
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -67,10 +74,6 @@ set -o vi
 alias rceditz='$EDITOR $HOME/.zshrc'
 alias rcedit='$EDITOR $HOME/.bashrc'
 
-#go
-export GOROOT=/home/lbrusa/sgoinfre/go
-export PATH=$PATH:$GOROOT/bin
-export GOPATH=/home/lbrusa/sgoinfre/go_workspace
 
 # CDPATH is like PATH but for directories
 export CDPATH=$HOME:$HOME/Developer:$HOME/Music:$HOME/:$HOME/Music:..
