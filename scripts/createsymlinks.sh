@@ -6,7 +6,7 @@
 # therefore everytime I log in I need to recreate the symlink
 rm -rf ~/.docker
 mkdir -p ~/goinfre/.docker
-ln -sf ~/goinfre/.docker ~/.docker
+ln -sf ~/goinfre/.docker ~/.docker /dev/null 2>&1
 
 # for my dotfiles
 ln -sf ~/.dotfiles/gdb/.gdbinit ~/.gdbinit

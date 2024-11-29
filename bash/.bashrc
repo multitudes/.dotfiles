@@ -25,6 +25,34 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	export GOROOT=/home/lbrusa/sgoinfre/go
 	export GOPATH=/home/lbrusa/sgoinfre/go_workspace
 	export PATH=$PATH:$GOROOT/bin
+
+	# junest
+    export JUNEST_HOME=/home/lbrusa/sgoinfre/junest-home/junest
+	#!/bin/bash
+
+	# Set environment variables
+
+	export PACMAN_ROOT=/home/lbrusa/sgoinfre/junest-root
+	export PACMAN_CACHE=/home/lbrusa/sgoinfre/junest-cache
+
+	export PATH=$PATH:$(go env GOPATH)/bin
+	
+	export PATH=$PATH:/home/lbrusa/sgoinfre/homebrew/bin
+
+	eval "$(/home/lbrusa/sgoinfre/homebrew/bin/brew shellenv)"
+	
+	# i download openssl for the cybersecurity piscine
+	# export LD_LIBRARY_PATH=$HOME/openssl/lib:$LD_LIBRARY_PATH
+	# Add Homebrew OpenSSL to LD_LIBRARY_PATH
+	export LD_LIBRARY_PATH="$(brew --prefix openssl)/lib:$LD_LIBRARY_PATH"
+
+
+	# Update the package database and upgrade all packages
+	# pacman --cachedir $PACMAN_CACHE --root $PACMAN_ROOT -Syu
+
+	# Install ffmpeg
+	# pacman --cachedir $PACMAN_CACHE --root $PACMAN_ROOT -S ffmpeg
+	
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -66,3 +94,13 @@ alias dclean='containers=$(docker ps -aq -f status=exited); [ -n "$containers" ]
 # NVIM
 # use neovim instead of vim
 alias vim='nvim'
+
+export PATH=~/.local/share/junest/bin:/home/lbrusa/.local/share/junest/bin:/home/lbrusa/.local/share/junest/bin:/home/lbrusa/.local/share/junest/bin:/sgoinfre/goinfre/Perso/lbrusa/swift-5.10.1-RELEASE-ubuntu22.04/usr/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/local/bin:/home/lbrusa/.local/bin:/home/lbrusa/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/lbrusa/sgoinfre/go/bin:/home/lbrusa/sgoinfre/go_workspace/bin
+
+
+# Number of commands to keep in memory
+HISTSIZE=10000
+
+# Number of commands to save to the history file
+SAVEHIST=10000
+
