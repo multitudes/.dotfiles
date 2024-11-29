@@ -52,13 +52,13 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     export PATH="/snap/bin:$PATH"
     export PATH="/home/lbrusa/sgoinfre/go/bin:$PATH"
     export PATH="/home/lbrusa/sgoinfre/go_workspace/bin:$PATH"
-    export PATH="/home/lbrusa/sgoinfre/homebrew/bin:$PATH"
+    # export PATH="/home/lbrusa/sgoinfre/homebrew/bin:$PATH"
 
     # Initialize Homebrew
-    eval "$(/home/lbrusa/sgoinfre/homebrew/bin/brew shellenv)"
+    # eval "$(/home/lbrusa/sgoinfre/homebrew/bin/brew shellenv)"
 
     # Add Homebrew OpenSSL to LD_LIBRARY_PATH
-    export LD_LIBRARY_PATH="$(brew --prefix openssl)/lib:$LD_LIBRARY_PATH"
+    # export LD_LIBRARY_PATH="$(brew --prefix openssl)/lib:$LD_LIBRARY_PATH"
 
 fi
 
