@@ -7,6 +7,9 @@
 # Check if the operating system is Linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
+	# start from my sgoinfre folder
+	cd ~/sgoinfre
+
     # I downloaded the update for VSCode but i need to run it from the downloaded folder
     #alias code='/home/lbrusa/Downloads/usr/share/code/code'
 
@@ -60,6 +63,9 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Add Homebrew OpenSSL to LD_LIBRARY_PATH
     # export LD_LIBRARY_PATH="$(brew --prefix openssl)/lib:$LD_LIBRARY_PATH"
 
+	# open a new incognito window in Firefox for evaluations
+	alias eval='firefox --private-window https://profile.intra.42.fr/' 
+	alias gmail='firefox https://gmail.com'
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -97,3 +103,8 @@ HISTSIZE=10000
 
 # Number of commands to save to the history file
 SAVEHIST=10000
+
+# this allows your fav editor to be used in the terminal
+# or when viewing a file in the terminal with less and pressint v
+EDITOR=vim
+VISUAL=vim
