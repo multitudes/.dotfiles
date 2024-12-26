@@ -7,8 +7,8 @@
 # Check if the operating system is Linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
-	# start from my sgoinfre folder
-	cd ~/sgoinfre
+	# start from my sgoinfre folder but this breaks when starting a terminal from vscode with the path from folder
+	# cd ~/sgoinfre
 
     # I downloaded the update for VSCode but i need to run it from the downloaded folder
     #alias code='/home/lbrusa/Downloads/usr/share/code/code'
@@ -66,6 +66,33 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	# open a new incognito window in Firefox for evaluations
 	alias eval='firefox --private-window https://profile.intra.42.fr/' 
 	alias gmail='firefox https://gmail.com'
+
+	# Define the quick cd function as in "efficient linux on command line"
+	qcd () {
+		# Accept 1 argument that's a string key, and perform a different
+		# "cd" operation for each key.
+		case "$1" in
+			webserv)
+			cd $HOME/sgoinfre/42-Webserv
+			;;
+			inception)
+			cd $HOME/sgoinfre/42-Inception
+			;;
+			books)
+			cd $HOME/sgoinfre/books
+			;;
+			# Add more keys here as needed
+			*)
+			# The supplied argument was not one of the supported keys
+			echo "qcd: unknown key '$1'"
+			return 1
+			;;
+		esac
+		# Helpfully print the current directory name to indicate where you are
+		pwd
+	}
+	# set up tab completion for qcd
+	compdef '_values "qcd" webserv inception books' qcd
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -108,3 +135,9 @@ SAVEHIST=10000
 # or when viewing a file in the terminal with less and pressint v
 EDITOR=vim
 VISUAL=vim
+
+# quick edit of the zshrc file
+alias rczedit='$EDITOR $HOME/.zshrc'
+
+# Dont delete the wrong file
+alias rm='rm -i'

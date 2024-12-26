@@ -8,8 +8,8 @@
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
 	# start from my sgoinfre folder
-	cd ~/sgoinfre
-	
+	# cd ~/sgoinfre
+
     # I downloaded the update for VSCode but i need to run it from the downloaded folder
     #alias code='/home/lbrusa/Downloads/usr/share/code/code'
 
@@ -65,6 +65,35 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
 	alias eval='firefox --private-window https://profile.intra.42.fr/'
 	alias gmail='firefox https://gmail.com'
+
+	# Define the quick cd function as in "efficient linux on command line"
+	qcd () {
+		# Accept 1 argument that's a string key, and perform a different
+		# "cd" operation for each key.
+		case "$1" in
+			webserv)
+			cd $HOME/sgoinfre/42-Webserv
+			;;
+			inception)
+			cd $HOME/sgoinfre/42-Inception
+			;;
+			books)
+			cd $HOME/sgoinfre/books
+			;;
+			# Add more keys here as needed
+			*)
+			# The supplied argument was not one of the supported keys
+			echo "qcd: unknown key '$1'"
+			return 1
+			;;
+		esac
+		# Helpfully print the current directory name to indicate where you are
+		pwd
+	}
+# Set up tab completion
+complete -W "webserv inception books" qcd
+
+
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -85,10 +114,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # common to both linux and macOS
+
 # ignore duplicates in history when consecutively typed
 HISTCONTROL=ignoredups
+
 # vim style command line editing
-set -o vi
+#set -o vi
 
 #alias to edit zshrc and bashrc
 alias rceditz='$EDITOR $HOME/.zshrc'
@@ -107,3 +138,9 @@ SAVEHIST=10000
 # or for ex when viewing a file with less and pressing v
 VISUAL=vim
 EDITOR=vim
+
+# quick edit of the bashrc file
+alias rcedit='$EDITOR $HOME/.bashrc'
+
+# dont delete the wrong files!
+alias rm='rm -i'
