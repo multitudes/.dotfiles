@@ -98,19 +98,14 @@ fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Code specific to macOS
-    echo "macOS"
-    # Add Anaconda3 to PATH
-    export PATH="$HOME/anaconda3/bin:$PATH"
+	echo "macOS"
 
-    # Initialize conda
-    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="$HOME/anaconda3/bin:$PATH"
-    fi
-    # for alacritty
-    ln -s /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
-    
+	# for go
+	export PATH=$PATH:/usr/local/go/bin
+
+	# for alacritty
+	ln -s /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
+	
 fi
 
 # common to both linux and macOS
