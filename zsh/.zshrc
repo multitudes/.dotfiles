@@ -108,7 +108,15 @@ fi
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Code specific to macOS
 	echo "macOS"
+	
+	# First, find and fix permissions
+	for dir in $(compaudit); do
+		chmod go-w "$dir"
+	done
 
+	# Then load completion system
+	autoload -Uz compinit
+	compinit
 	# for go
 	export PATH=$PATH:/usr/local/go/bin
 
