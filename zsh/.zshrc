@@ -68,9 +68,15 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	alias gmail='firefox https://gmail.com'
 	
 	
-	# autoload -Uz compinit
-    # compinit
-	
+	# First, find and fix permissions
+	for dir in $(compaudit); do
+		chmod go-w "$dir"
+	done
+
+	# Then load completion system
+	autoload -Uz compinit
+	compinit
+
 	# Define the quick cd function as in "efficient linux on command line"
 	qcd () {
 		# Accept 1 argument that's a string key, and perform a different

@@ -59,3 +59,8 @@ for dir in $(compaudit); do
     sudo chmod g-w,o-w "$dir"
 done
 ```
+
+check who is responsible for those directories again with 
+```bash
+ls -ld $(compaudit)
+```
