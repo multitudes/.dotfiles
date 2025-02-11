@@ -66,7 +66,11 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	# open a new incognito window in Firefox for evaluations
 	alias eval='firefox --private-window https://profile.intra.42.fr/' 
 	alias gmail='firefox https://gmail.com'
-
+	
+	
+	# autoload -Uz compinit
+    # compinit
+	
 	# Define the quick cd function as in "efficient linux on command line"
 	qcd () {
 		# Accept 1 argument that's a string key, and perform a different

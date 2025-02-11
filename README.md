@@ -28,3 +28,34 @@ ln -s path/to/your/.dotfiles/nvim .config/nvim
 
 
 The nvim folder is meant to have a symlink in the .config file in the Linux home
+
+## compinit warning
+zsh compinit: insecure directories, run compaudit for list. Ignore insecure directories and continue [y] or abort compinit [n]? what could it be?
+This warning is related to the security of the directories used by `zsh` for completion. It means that some directories in your `$fpath` have insecure permissions. You can fix this by running `compaudit` to identify the insecure directories and then adjusting their permissions.
+
+Here are the steps to resolve this issue:
+
+1. **Run `compaudit` to identify insecure directories:**
+      compaudit
+2. **Change the permissions of the insecure directories:**
+   For each directory listed by `compaudit`, change the permissions to be more secure. Typically, you want to ensure that only the owner has write permissions. You can use the `chmod` command to do this. For example:
+      chmod 755 /path/to/insecure/directory
+3. **Re-run `compinit` to ensure the issue is resolved:**
+      compinit
+If you want to ignore the warning and continue without fixing the permissions, you can add the following line to your `.zshrc` file before calling `compinit`:
+zstyle ':completion:*' rehash true
+Here is an example of how you might modify your `.zshrc` file:
+# Ignore insecure directories warning
+zstyle ':completion:*' rehash true
+
+# Initialize zsh completion
+autoload -Uz compinit
+compinit
+This will suppress the warning, but it is recommended to fix the permissions for better security.
+
+also run
+```bash
+for dir in $(compaudit); do
+    sudo chmod g-w,o-w "$dir"
+done
+```
