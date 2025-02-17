@@ -93,6 +93,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 # Set up tab completion
 complete -W "webserv inception books" qcd
 
+    # I downloaded the update for VSCode but i need to run it from the downloaded folder
+    alias code='/home/lbrusa/Downloads/usr/share/code/code'
 
 fi
 
@@ -112,11 +114,10 @@ fi
 
 # ignore duplicates in history when consecutively typed
 HISTCONTROL=ignoredups
-
 # vim style command line editing
 #set -o vi
 
-#alias to edit zshrc and bashrc
+# alias to edit zshrc and bashrc
 alias rceditz='$EDITOR $HOME/.zshrc'
 alias rcedit='$EDITOR $HOME/.bashrc'
 

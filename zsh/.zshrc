@@ -1,11 +1,11 @@
 ### this is for berlin 42
 
 ## this should create the symlinks for .gitconfig etc
-~/.scripts/createsymlinks.sh
 
 ############## this is for berlin 42
 # Check if the operating system is Linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	~/.scripts/createsymlinks.sh
 
 	# start from my sgoinfre folder but this breaks when starting a terminal from vscode with the path from folder
 	# cd ~/sgoinfre
@@ -121,8 +121,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	export PATH=$PATH:/usr/local/go/bin
 
 	# for alacritty
-	ln -s /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
-	
+	    # check if the config file exists
+    if [ ! -f $HOME/.config/alacritty/alacritty.toml ]; then
+        mkdir -p $HOME/.config/alacritty
+        ln -s ~/.dotfiles/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
+    fi
 fi
 
 # common to both linux and macOS
@@ -131,7 +134,7 @@ HISTCONTROL=ignoredups
 # vim style command line editing
 set -o vi
 
-#alias to edit zshrc and bashrc
+# alias to edit zshrc and bashrc
 alias rceditz='$EDITOR $HOME/.zshrc'
 alias rcedit='$EDITOR $HOME/.bashrc'
 
