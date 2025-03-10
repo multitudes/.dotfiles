@@ -1,7 +1,3 @@
-
-program = "/usr/bin/tmux"
-args = ["new-session", "-A", "-s", "default"]
-
 [bell]
 animation = "EaseOutExpo"
 color = "0x111111"
