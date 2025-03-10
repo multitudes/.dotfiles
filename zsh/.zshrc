@@ -1,10 +1,7 @@
-### this is for berlin 42
 
-## this should create the symlinks for .gitconfig etc
-
-############## this is for berlin 42
 # Check if the operating system is Linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+############## this is for berlin 42
 	~/.scripts/createsymlinks.sh
 
 	# start from my sgoinfre folder but this breaks when starting a terminal from vscode with the path from folder
@@ -106,23 +103,30 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    # Code specific to macOS
+	autoload -Uz compinit
+	compinit
+    
+	# Code specific to macOS
 	echo "macOS"
 	
 	# First, find and fix permissions
-	for dir in $(compaudit); do
-		chmod go-w "$dir"
-	done
+	# for dir in $(compaudit); do
+	# 	chmod go-w "$dir"
+	# done
 
 	# Then load completion system
-	autoload -Uz compinit
-	compinit
 	# for go
 	export PATH=$PATH:/usr/local/go/bin
 
 	# for alacritty
-	    # check if the config file exists
-    if [ ! -f $HOME/.config/alacritty/alacritty.toml ]; then
+	# check if the config file exists
+    # for alacritty
+    if [ ! -L /usr/local/bin/alacritty ]; then
+        ln -s /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
+    fi
+    
+    # check if the config file exists
+    if [ ! -L $HOME/.config/alacritty/alacritty.toml ]; then
         mkdir -p $HOME/.config/alacritty
         ln -s ~/.dotfiles/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
     fi
