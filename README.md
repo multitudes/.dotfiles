@@ -26,8 +26,14 @@ By creating a symbolic link from your actual configuration files (which could be
 ln -s path/to/your/.dotfiles/nvim .config/nvim
 ```
 
-
 The nvim folder is meant to have a symlink in the .config file in the Linux home
+
+I looked up some other flavours ov Vim like spacevim and onivim but they are deprecated as of today. NeoVim seems the best vim solution avalaible right now. Also check the primagen about Nvim.  
+
+### Some Vim Resources
+https://github.com/ThePrimeagen/vim-nav-playground  
+https://theprimeagen.github.io/vim-fundamentals/  
+https://www.youtube.com/watch?v=VVdmmN0su6E  
 
 ## compinit warning
 zsh compinit: insecure directories, run compaudit for list. Ignore insecure directories and continue [y] or abort compinit [n]? what could it be?
