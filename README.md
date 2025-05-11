@@ -30,11 +30,12 @@ The nvim folder is meant to have a symlink in the .config file in the Linux home
 The LSP (language server protocol) for Nvim is included in the settings.
 I looked up some other flavours ov Vim like spacevim and onivim but they are deprecated as of today. NeoVim seems the best vim solution avalaible right now. Also check the primagen about Nvim.  
 
-### Some Vim Resources
+### Some Vim Resources to Learn VIM or NVIM
 https://github.com/ThePrimeagen/vim-nav-playground  
 https://theprimeagen.github.io/vim-fundamentals/  
 https://www.youtube.com/watch?v=VVdmmN0su6E  
 `vimtutor`  
+curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-0-hjkl-x.md > exercise.md && vim exercise.md 
 
 
 ## compinit warning
