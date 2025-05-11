@@ -35,7 +35,8 @@ https://github.com/ThePrimeagen/vim-nav-playground
 https://theprimeagen.github.io/vim-fundamentals/  
 https://www.youtube.com/watch?v=VVdmmN0su6E  
 `vimtutor`  
-curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-0-hjkl-x.md > exercise.md && vim exercise.md 
+curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-0-hjkl-x.md > exercise.md && vim exercise.md  
+https://github.com/ThePrimeagen/vim-fundamentals/blob/master/lessons/exercise-0-hjkl-x.md  
 
 
 ## compinit warning
