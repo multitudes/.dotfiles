@@ -93,6 +93,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	}
 	# set up tab completion for qcd
 	compdef '_values "qcd" webserv inception books' qcd
+    alias python='python3'
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -140,4 +141,4 @@ VISUAL=vim
 alias rczedit='$EDITOR $HOME/.zshrc'
 
 # Dont delete the wrong file
-alias rm='rm -i'
+alias rm='rm -i'export PATH=$HOME/.local/bin:$PATH

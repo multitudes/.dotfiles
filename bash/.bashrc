@@ -92,7 +92,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	}
 # Set up tab completion
 complete -W "webserv inception books" qcd
-
+alias python='python3'
 
 fi
 
@@ -144,3 +144,7 @@ alias rcedit='$EDITOR $HOME/.bashrc'
 
 # dont delete the wrong files!
 alias rm='rm -i'
+export PATH=$HOME/.local/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
