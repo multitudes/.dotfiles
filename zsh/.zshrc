@@ -1,11 +1,8 @@
-### this is for berlin 42
 
-## this should create the symlinks for .gitconfig etc
-~/.scripts/createsymlinks.sh
-
-############## this is for berlin 42
 # Check if the operating system is Linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+############## this is for berlin 42
+	~/.scripts/createsymlinks.sh
 
 	# start from my sgoinfre folder but this breaks when starting a terminal from vscode with the path from folder
 	# cd ~/sgoinfre
@@ -66,6 +63,16 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	# open a new incognito window in Firefox for evaluations
 	alias eval='firefox --private-window https://profile.intra.42.fr/' 
 	alias gmail='firefox https://gmail.com'
+	
+	
+	# First, find and fix permissions
+	for dir in $(compaudit); do
+		chmod go-w "$dir"
+	done
+
+	# Then load completion system
+	autoload -Uz compinit
+	compinit
 
 	# Define the quick cd function as in "efficient linux on command line"
 	qcd () {
@@ -97,20 +104,33 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    # Code specific to macOS
-    echo "macOS"
-    # Add Anaconda3 to PATH
-    export PATH="$HOME/anaconda3/bin:$PATH"
-
-    # Initialize conda
-    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="$HOME/anaconda3/bin:$PATH"
-    fi
-    # for alacritty
-    ln -s /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
+	autoload -Uz compinit
+	compinit
     
+	# Code specific to macOS
+	echo "macOS"
+	
+	# First, find and fix permissions
+	# for dir in $(compaudit); do
+	# 	chmod go-w "$dir"
+	# done
+
+	# Then load completion system
+	# for go
+	export PATH=$PATH:/usr/local/go/bin
+
+	# for alacritty
+	# check if the config file exists
+    # for alacritty
+    if [ ! -L /usr/local/bin/alacritty ]; then
+        ln -s /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
+    fi
+    
+    # check if the config file exists
+    if [ ! -L $HOME/.config/alacritty/alacritty.toml ]; then
+        mkdir -p $HOME/.config/alacritty
+        ln -s ~/.dotfiles/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
+    fi
 fi
 
 # common to both linux and macOS
@@ -119,7 +139,7 @@ HISTCONTROL=ignoredups
 # vim style command line editing
 set -o vi
 
-#alias to edit zshrc and bashrc
+# alias to edit zshrc and bashrc
 alias rceditz='$EDITOR $HOME/.zshrc'
 alias rcedit='$EDITOR $HOME/.bashrc'
 
@@ -141,4 +161,4 @@ VISUAL=vim
 alias rczedit='$EDITOR $HOME/.zshrc'
 
 # Dont delete the wrong file
-alias rm='rm -i'export PATH=$HOME/.local/bin:$PATH
+alias rm='rm -i'

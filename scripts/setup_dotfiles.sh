@@ -40,11 +40,17 @@ if [ -f "$HOME/.tmux.conf" ]; then
 	mv "$HOME/.tmux.conf" "$HOME/.tmux.conf.bak"
 fi	
 
+if [ -f "$HOME/.alacrytty.yml" ]; then
+	# Backup the existing dotfile
+	mv "$HOME/.alacrytty.yml" "$HOME/.alacrytty.yml.bak"
+fi
+
 # Create a symlink to the dotfile
 ln -sf "$DOTFILES_DIR/bash/.bashrc" "$HOME/.bashrc"
 ln -sf "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
 ln -sf "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$DOTFILES_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
+ln -sf "$DOTFILES_DIR/alacritty/.alacritty.yml" "$HOME/.alacritty.yml"
 
 # only for linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then 
