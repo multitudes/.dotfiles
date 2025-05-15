@@ -93,6 +93,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 # Set up tab completion
 complete -W "webserv inception books" qcd
 alias python='python3'
+alias norminette=flake8
 
 fi
 

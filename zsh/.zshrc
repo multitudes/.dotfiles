@@ -101,6 +101,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	# set up tab completion for qcd
 	compdef '_values "qcd" webserv inception books' qcd
     alias python='python3'
+    alias norminette=flake8
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
