@@ -141,5 +141,5 @@ alias rcedit='$EDITOR $HOME/.bashrc'
 alias rm='rm -i'
 export PATH=$HOME/.local/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
+
+alias python='python3'

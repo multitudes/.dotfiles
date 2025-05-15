@@ -163,3 +163,5 @@ alias rczedit='$EDITOR $HOME/.zshrc'
 
 # Dont delete the wrong file
 alias rm='rm -i'
+
+alias python='python3'
