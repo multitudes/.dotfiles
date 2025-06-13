@@ -118,3 +118,31 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"  # or any other theme you prefer
 source $ZSH/oh-my-zsh.sh
 ```
+
+## symlinks
+A symlink (symbolic link) is a special type of file that points to another file or directory. Think of it as a shortcut or alias. Here's a simple explanation:
+
+Symlink Basics:
+It's like a pointer or reference to another file/directory
+Changes to the original file are reflected in the symlink
+Deleting the symlink doesn't delete the original file
+Deleting the original file breaks the symlink
+Example from your dotfiles:
+In your setup script, you have several symlinks:
+
+This creates a symlink from .bashrc to your dotfiles repository's .bashrc. The -s flag creates a symbolic link, and -f forces the creation even if the destination already exists. Symbolic Links (Soft Links)
+Created with ln -s
+Points to the pathname of another file
+Can link across different filesystems
+Can point to directories
+If the original file is deleted, the link breaks
+Shows up in ls -l with an l at the start and -> pointing to the target
+
+
+### Hard Links
+Created with ln (without -s)
+Points directly to the inode (data) of the file
+Must be on the same filesystem
+Cannot link to directories
+Original file data remains accessible even if the original filename is deleted
+Appears as a regular file in ls -l
