@@ -105,7 +105,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	export PATH=$PATH:/usr/local/go/bin
 
 	# for alacritty
-	ln -s /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
+	ln -sf /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
 	
 fi
 
@@ -143,3 +143,6 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
 
 alias python='python3'
+
+PS1='\[\e[1;32m\]😀 \[\e[0;0m\]'
+. "$HOME/.langflow/uv/env"

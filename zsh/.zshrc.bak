@@ -165,5 +165,3 @@ alias rczedit='$EDITOR $HOME/.zshrc'
 alias rm='rm -i'
 
 alias python='python3'
-ZSH_THEME="powerlevel10k/powerlevel10k"
-. "$HOME/.langflow/uv/env"

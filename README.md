@@ -74,3 +74,47 @@ check who is responsible for those directories again with
 ```bash
 ls -ld $(compaudit)
 ```
+
+## oh my zsh
+To check if Oh My Zsh is activated, you can:
+
+1. Look for the `.oh-my-zsh` directory:
+```bash
+ls -la ~/.oh-my-zsh
+```
+
+2. Check your .zshrc file for Oh My Zsh configuration:
+```bash
+grep "oh-my-zsh" ~/.zshrc
+```
+
+The "macOS" greeting comes from this line in your .zshrc:
+```bash
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Code specific to macOS
+    echo "macOS"
+    ...
+fi
+```
+
+
+## hostname
+
+As for "MutantBot" - this is your computer's hostname. You can check it with:
+```bash
+hostname
+```
+
+To change it, you can use:
+```bash
+sudo scutil --set HostName yournewname
+```
+
+If you want to remove the "macOS" greeting, you can simply remove or comment out the `echo "macOS"` line in your .zshrc file.
+
+To fully activate Oh My Zsh with a theme, make sure these lines are in your .zshrc:
+```bash
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"  # or any other theme you prefer
+source $ZSH/oh-my-zsh.sh
+```

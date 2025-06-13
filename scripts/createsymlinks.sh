@@ -11,3 +11,4 @@ ln -sf ~/goinfre/.docker ~/.docker /dev/null 2>&1
 # for my dotfiles
 ln -sf ~/.dotfiles/gdb/.gdbinit ~/.gdbinit
 # ls -l ~/.docker
+ln -s ~/.dotfiles/oh-my-zsh ~/.oh-my-zsh
