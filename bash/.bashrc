@@ -55,6 +55,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     export PATH="/snap/bin:$PATH"
     export PATH="/home/lbrusa/sgoinfre/go/bin:$PATH"
     export PATH="/home/lbrusa/sgoinfre/go_workspace/bin:$PATH"
+    export PATH="/home/lbrusa/sgoinfre/DEV/bin:$PATH"
+
     # export PATH="/home/lbrusa/sgoinfre/homebrew/bin:$PATH"
 
     # Initialize Homebrew
