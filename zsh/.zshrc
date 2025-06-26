@@ -2,7 +2,7 @@
 # Check if the operating system is Linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 ############## this is for berlin 42
-	~/.scripts/createsymlinks.sh
+	# ~/.dotfiles/scripts/createsymlinks.sh
 
 	# start from my sgoinfre folder but this breaks when starting a terminal from vscode with the path from folder
 	# cd ~/sgoinfre
@@ -168,4 +168,3 @@ alias rm='rm -i'
 
 alias python='python3'
 ZSH_THEME="powerlevel10k/powerlevel10k"
-. "$HOME/.langflow/uv/env"
