@@ -104,6 +104,19 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	compdef '_values "qcd" webserv inception books' qcd
     alias python='python3'
     alias norminette=flake8
+
+    # GPG and Git signing configuration
+    export GPG_TTY=$(tty)
+    export GPG_AGENT_INFO=""  # Force Git to always use gpg-agent
+
+    # Function to reset GPG agent if needed
+    gpg_fix() {
+        gpg-connect-agent updatestartuptty /bye >/dev/null
+        git config --global gpg.program $(which gpg)
+    }
+
+    # Add alias for easy fix
+    alias fix-git-signing='gpg_fix'
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -166,5 +179,5 @@ alias rczedit='$EDITOR $HOME/.zshrc'
 # Dont delete the wrong file
 alias rm='rm -i'
 
-alias python='python3'
+alias python="python3"
 ZSH_THEME="powerlevel10k/powerlevel10k"
