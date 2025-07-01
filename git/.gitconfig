@@ -1,6 +1,7 @@
 [user]
 	name = Laurent Brusa
 	email = wrmultitudes@gmail.com
+	signingkey = KEYID
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -21,6 +22,7 @@
 	trustExitCode = true
 [commit]
 	template = /Users/laurentb/.stCommitMsg
+	gpgsign = false
 [color]
 	ui = true
 [init]
@@ -34,3 +36,6 @@
 	prune = true
 [push]
 	default = current
+[gpg]
+	program = gpg1
+	format = openpgp

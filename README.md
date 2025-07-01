@@ -18,6 +18,8 @@ IMPORTANT: The script assumes you put the .dotfiles folder in your home director
 
 ## git
 
+git commit -m "your message" --no-gpg-sign
+https://github.com/pstadler/keybase-gpg-github
 
 ## Neovim
 Neovim, which uses Lua for configuration, looks for its configuration files in several places, one of which is the `~/.config/nvim/` directory.   
