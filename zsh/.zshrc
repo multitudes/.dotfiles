@@ -286,7 +286,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.zsh_profile
+source ~/.zprofile
 
 alias luamake=/home/mpaulson/personal/lua-language-server/3rd/luamake/luamake
 
