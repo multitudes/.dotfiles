@@ -1,1 +1,0 @@
-/Users/laurentb/.dotfiles/zsh/.zshrc

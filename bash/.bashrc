@@ -1,7 +1,7 @@
 ### this is for berlin 42
 
 ## this should create the symlinks for .gitconfig etc
-~/.scripts/createsymlinks.sh
+# ~/.dotfiles/scripts/createsymlinks.sh
 
 ############## this is for berlin 42
 # Check if the operating system is Linux
@@ -55,6 +55,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     export PATH="/snap/bin:$PATH"
     export PATH="/home/lbrusa/sgoinfre/go/bin:$PATH"
     export PATH="/home/lbrusa/sgoinfre/go_workspace/bin:$PATH"
+    export PATH="/home/lbrusa/sgoinfre/DEV/bin:$PATH"
+
     # export PATH="/home/lbrusa/sgoinfre/homebrew/bin:$PATH"
 
     # Initialize Homebrew
@@ -145,4 +147,4 @@ export PATH="$HOME/.local/bin:$PATH"
 alias python='python3'
 
 PS1='\[\e[1;32m\]😀 \[\e[0;0m\]'
-. "$HOME/.langflow/uv/env"
+

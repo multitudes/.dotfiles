@@ -2,7 +2,7 @@
 # Check if the operating system is Linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 ############## this is for berlin 42
-	~/.scripts/createsymlinks.sh
+	# ~/.dotfiles/scripts/createsymlinks.sh
 
 	# start from my sgoinfre folder but this breaks when starting a terminal from vscode with the path from folder
 	# cd ~/sgoinfre
@@ -52,6 +52,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     export PATH="/snap/bin:$PATH"
     export PATH="/home/lbrusa/sgoinfre/go/bin:$PATH"
     export PATH="/home/lbrusa/sgoinfre/go_workspace/bin:$PATH"
+    export PATH="/home/lbrusa/sgoinfre/DEV/bin:$PATH"
+
     # export PATH="/home/lbrusa/sgoinfre/homebrew/bin:$PATH"
 
     # Initialize Homebrew
@@ -102,6 +104,19 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	compdef '_values "qcd" webserv inception books' qcd
     alias python='python3'
     alias norminette=flake8
+
+    # GPG and Git signing configuration
+    export GPG_TTY=$(tty)
+    export GPG_AGENT_INFO=""  # Force Git to always use gpg-agent
+
+    # Function to reset GPG agent if needed
+    gpg_fix() {
+        gpg-connect-agent updatestartuptty /bye >/dev/null
+        git config --global gpg.program $(which gpg)
+    }
+
+    # Add alias for easy fix
+    alias fix-git-signing='gpg_fix'
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -164,7 +179,7 @@ alias rczedit='$EDITOR $HOME/.zshrc'
 # Dont delete the wrong file
 alias rm='rm -i'
 
-alias python='python3'
+alias python="python3"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 . "$HOME/.langflow/uv/env"
 
