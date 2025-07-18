@@ -328,3 +328,4 @@ autoload -Uz compinit
 compinit
 eval "$(starship init zsh)"
 # End of Docker CLI completions
+alias k="kubecolor"
