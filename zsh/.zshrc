@@ -1,5 +1,6 @@
 
-# Check if the operating system is Linux
+
+# Check if the operating system is Linux - for 42 Berlin
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 ############## this is for berlin 42
 	# ~/.dotfiles/scripts/createsymlinks.sh
@@ -120,33 +121,39 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-	autoload -Uz compinit
-	compinit
+    autoload -Uz compinit
+    compinit
     
-	# Code specific to macOS
-	echo "macOS"
-	
-	# First, find and fix permissions
-	# for dir in $(compaudit); do
-	# 	chmod go-w "$dir"
-	# done
-
-	# Then load completion system
-	# for go
-	export PATH=$PATH:/usr/local/go/bin
-
-	# for alacritty
-	# check if the config file exists
-    # for alacritty
-    if [ ! -L /usr/local/bin/alacritty ]; then
-        ln -s /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
+    # Code specific to macOS
+    echo "macOS"
+    
+    # Homebrew setup for M1 Mac
+    if [[ -f "/opt/homebrew/bin/brew" ]]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
     
-    # check if the config file exists
+    # Go path
+    export PATH=$PATH:/usr/local/go/bin
+    
+    # For alacritty
+    if [ ! -L /usr/local/bin/alacritty ]; then
+        ln -sf /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
+    fi
+    
+    # Check if the alacritty config file exists
     if [ ! -L $HOME/.config/alacritty/alacritty.toml ]; then
         mkdir -p $HOME/.config/alacritty
-        ln -s ~/.dotfiles/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
+        ln -sf ~/.dotfiles/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
     fi
+    
+    # macOS-specific aliases
+    alias python='python3'
+    
+    # Add useful macOS aliases
+    alias brewup='brew update && brew upgrade'
+    alias finder='open -a Finder'
+    alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
+    alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
 fi
 
 # common to both linux and macOS
@@ -180,7 +187,9 @@ alias rczedit='$EDITOR $HOME/.zshrc'
 alias rm='rm -i'
 
 alias python="python3"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+
 . "$HOME/.langflow/uv/env"
 
 
@@ -286,27 +295,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.zprofile
 
-alias luamake=/home/mpaulson/personal/lua-language-server/3rd/luamake/luamake
-
-# bun completions
-[ -s "/home/mpaulson/.bun/_bun" ] && source "/home/mpaulson/.bun/_bun"
-
-# Bun
-export BUN_INSTALL="/home/mpaulson/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Bun
-export BUN_INSTALL="/home/mpaulson/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# pnpm
-export PNPM_HOME="/home/mpaulson/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-# Turso
-export PATH="/home/mpaulson/.turso:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
