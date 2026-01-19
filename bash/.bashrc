@@ -108,6 +108,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     # for USD tools
     export PATH=$PATH:/Users/laurentb/Dev/USD/bin
+    export PATH=$PATH:/Applications/CMake.app/Contents/bin/
     
 	# for alacritty
 	ln -sf /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
@@ -145,7 +146,6 @@ alias rcedit='$EDITOR $HOME/.bashrc'
 # dont delete the wrong files!
 alias rm='rm -i'
 export PATH=$HOME/.local/bin:$PATH
-export PATH="$HOME/.local/bin:$PATH"
 
 alias python='python3'
 

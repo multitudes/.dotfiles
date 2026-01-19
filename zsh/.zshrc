@@ -137,7 +137,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     
     # for the pixar env
     export PATH=$PATH:/Users/laurentb/Dev/USD/bin
-
+    export PATH=$PATH:/Applications/CMake.app/Contents/bin/
+    
     # For alacritty
     if [ ! -L /usr/local/bin/alacritty ]; then
         ln -sf /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
