@@ -106,6 +106,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	# for go
 	export PATH=$PATH:/usr/local/go/bin
 
+    # for USD tools
+    export PATH=$PATH:/Users/laurentb/Dev/USD/bin
+    
 	# for alacritty
 	ln -sf /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
 	
@@ -146,5 +149,9 @@ export PATH="$HOME/.local/bin:$PATH"
 
 alias python='python3'
 
-PS1='\[\e[1;32m\]😀 \[\e[0;0m\]'
 
+. "$HOME/.cargo/env"
+
+. "$HOME/.turso/env"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

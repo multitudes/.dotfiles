@@ -135,6 +135,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # Go path
     export PATH=$PATH:/usr/local/go/bin
     
+    # for the pixar env
+    export PATH=$PATH:/Users/laurentb/Dev/USD/bin
+
     # For alacritty
     if [ ! -L /usr/local/bin/alacritty ]; then
         ln -sf /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
@@ -218,3 +221,9 @@ compinit
 eval "$(starship init zsh)"
 # End of Docker CLI completions
 alias k="kubecolor"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/.turso/env"
