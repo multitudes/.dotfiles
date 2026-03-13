@@ -138,7 +138,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # for the pixar env
     export PATH=$PATH:/Users/laurentb/Dev/USD/bin
     export PATH=$PATH:/Applications/CMake.app/Contents/bin/
-    
+    export USD_PATH=~/dev/USD
+
     # For alacritty
     if [ ! -L /usr/local/bin/alacritty ]; then
         ln -sf /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
@@ -228,3 +229,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 . "$HOME/.turso/env"
+
+# Added by Antigravity
+export PATH="/Users/laurentb/.antigravity/antigravity/bin:$PATH"
+
+# from paul hudson :)
+gg () {
+    git add .
+    git commit -m "$*"
+    git push
+}
+
+alias gs='git status'
+alias gc='git commit'
+alias gp='git push'

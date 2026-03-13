@@ -109,6 +109,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # for USD tools
     export PATH=$PATH:/Users/laurentb/Dev/USD/bin
     export PATH=$PATH:/Applications/CMake.app/Contents/bin/
+    export USD_PATH=~/dev/USD
     
 	# for alacritty
 	ln -sf /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
@@ -155,3 +156,13 @@ alias python='python3'
 . "$HOME/.turso/env"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# from paul hudson :)
+gg () {
+    git add .
+    git commit -m "$*"
+    git push
+}
+alias gs='git status'
+alias gc='git commit'
+alias gp='git push'
