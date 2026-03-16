@@ -109,6 +109,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # for USD tools
     export PATH=$PATH:/Users/laurentb/Dev/USD/bin
     export PATH=$PATH:/Applications/CMake.app/Contents/bin/
+    export PATH=$PATH:/Users/laurentb/go/bin/
     export USD_PATH=~/dev/USD
     
 	# for alacritty
@@ -163,6 +164,12 @@ gg () {
     git commit -m "$*"
     git push
 }
+
 alias gs='git status'
 alias gc='git commit'
 alias gp='git push'
+
+# for the gyro project
+alias ton="ssh 42gyro4 'docker start cloudflared'"
+alias tof="ssh 42gyro4 'docker stop cloudflared'"
+alias tos="ssh 42gyro4 'docker ps -f name=cloudflared'"

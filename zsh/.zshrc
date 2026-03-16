@@ -138,6 +138,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # for the pixar env
     export PATH=$PATH:/Users/laurentb/Dev/USD/bin
     export PATH=$PATH:/Applications/CMake.app/Contents/bin/
+    export PATH=$PATH:/Users/laurentb/go/bin/
     export USD_PATH=~/dev/USD
 
     # For alacritty
@@ -234,6 +235,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/Users/laurentb/.antigravity/antigravity/bin:$PATH"
 
 # from paul hudson :)
+unalias gg 2>/dev/null
 gg () {
     git add .
     git commit -m "$*"
@@ -243,3 +245,8 @@ gg () {
 alias gs='git status'
 alias gc='git commit'
 alias gp='git push'
+
+# for the gyro project
+alias ton="ssh 42gyro4 'docker start cloudflared'"
+alias tof="ssh 42gyro4 'docker stop cloudflared'"
+alias tos="ssh 42gyro4 'docker ps -f name=cloudflared'"
