@@ -172,4 +172,4 @@ alias gp='git push'
 # for the gyro project
 alias ton="ssh 42gyro4 'docker start cloudflared'"
 alias tof="ssh 42gyro4 'docker stop cloudflared'"
-alias tos="ssh 42gyro4 'docker ps -f name=cloudflared'"
+alias tos="ssh 42gyro4 'docker ps -f name=cloudflared'"eval "$(mise activate bash)"

@@ -30,8 +30,8 @@
 [http]
 	postBuffer = 157286400
 [pull]
-	rebase = false
 	default = current
+	rebase = true
 [fetch]
 	prune = true
 [push]
@@ -39,3 +39,7 @@
 [gpg]
 	program = gpg1
 	format = openpgp
+[coderabbit]
+	machineId = cli/acbf7624f9eb49d08842511b854d189b
+[url "git@github.com:"]
+	insteadOf = https://github.com/

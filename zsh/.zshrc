@@ -140,7 +140,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH=$PATH:/Applications/CMake.app/Contents/bin/
     export PATH=$PATH:/Users/laurentb/go/bin/
     export USD_PATH=~/dev/USD
-
+	export PATH="/Users/laurentb/.volta/bin:$PATH"
     # For alacritty
     if [ ! -L /usr/local/bin/alacritty ]; then
         ln -sf /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/local/bin/alacritty
@@ -196,8 +196,10 @@ alias python="python3"
 
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
-. "$HOME/.langflow/uv/env"
+# . "$HOME/.langflow/uv/env"
 
+# i actually dont want to use langflows uv but my own
+export PATH="$HOME/.local/bin:$PATH"
 
 # ###################################
 # If you come from bash you might have to change your $PATH.
@@ -250,3 +252,12 @@ alias gp='git push'
 alias ton="ssh 42gyro4 'docker start cloudflared'"
 alias tof="ssh 42gyro4 'docker stop cloudflared'"
 alias tos="ssh 42gyro4 'docker ps -f name=cloudflared'"
+
+[ -f ~/.free-coding-models.env ] && . ~/.free-coding-models.env  # free-coding-models-env
+
+# Added by Antigravity
+export PATH="/Users/laurentb/.antigravity/antigravity/bin:$PATH"
+
+# opencode
+export PATH=/Users/laurentb/.opencode/bin:$PATH
+eval "$(mise activate zsh)"
