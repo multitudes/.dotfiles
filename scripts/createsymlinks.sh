@@ -12,7 +12,27 @@ fi
 GOINFRE="$(readlink -f "$HOME/goinfre")"
 DOCKER_DATA="$GOINFRE/docker"
 
-mkdir -p "$GOINFRE/.docker" "$GOINFRE/.cache" "$DOCKER_DATA" "$HOME/.config/docker" "$HOME/.local/share"
+# mkdir -p reports "File exists" when the path is a dangling symlink, and
+# then creating daemon.json fails with "No such file or directory".
+ensure_dir() {
+    local dir="$1"
+    if [ -L "$dir" ] && [ ! -d "$dir" ]; then
+        echo "createsymlinks: removing dangling symlink $dir -> $(readlink "$dir")" >&2
+        rm -f "$dir"
+    elif [ -e "$dir" ] && [ ! -d "$dir" ]; then
+        echo "createsymlinks: $dir exists and is not a directory" >&2
+        ls -ld "$dir" >&2
+        exit 1
+    fi
+    mkdir -p "$dir"
+}
+
+ensure_dir "$GOINFRE/.docker"
+ensure_dir "$GOINFRE/.cache"
+ensure_dir "$DOCKER_DATA"
+ensure_dir "$HOME/.config"
+ensure_dir "$HOME/.config/docker"
+ensure_dir "$HOME/.local/share"
 
 rm -rf "$HOME/.docker"
 ln -sfn "$GOINFRE/.docker" "$HOME/.docker"
